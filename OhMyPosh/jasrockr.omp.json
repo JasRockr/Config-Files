@@ -1,0 +1,198 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "plain",
+          "foreground": "p:terminal-black",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} <p:terminal-red>{{ .Var.separator }}</> "
+        },
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:terminal-blue",
+          "template": "{{ .Var.host_icon }} {{ .HostName }} <p:terminal-red>{{ .Var.separator }}</> "
+        },
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:terminal-gray",
+          "template": "{{ .Var.user_icon }} {{ .UserName }} <p:terminal-red>{{ .Var.separator }}</> "
+        },
+        {
+          "type": "shell",
+          "style": "plain",
+          "foreground": "p:terminal-green",
+          "template": "{{ .Var.shell_icon }} {{ .Name }} <p:terminal-red>{{ .Var.separator }}</> "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "p:node-green",
+          "template": "{{ .Var.node_icon }} {{ .Full }} {{ .Var.pipeline }} "
+        },
+        {
+          "type": "php",
+          "style": "plain",
+          "foreground": "p:php-purple",
+          "template": "{{ .Var.php_icon }} {{ .Full }} {{ .Var.pipeline }} "
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "p:python-yellow",
+          "template": "{{ .Var.python_icon }} {{ .Full }} {{ .Var.pipeline }} "
+        },
+        {
+          "type": "sysinfo",
+          "style": "plain",
+          "foreground": "p:terminal-black",
+          "template": "\ue266 {{ round .PhysicalPercentUsed .Precision }}% {{ .Var.pipeline }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "p:terminal-red",
+          "template": "{{ .FormattedMs }} ",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          }
+        },
+        {
+          "type": "battery",
+          "style": "diamond",
+          "foreground": "p:terminal-blue-black",
+          "foreground_templates": [
+            "{{if eq \"Charging\" .State.String}}p:terminal-blue{{end}}",
+            "{{if eq \"Discharging\" .State.String}}p:terminal-yellow{{end}}",
+            "{{if eq \"Full\" .State.String}}p:terminal-green{{end}}"
+          ],
+          "template": "[ {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Var.percent_icon }} ]",
+          "properties": {
+            "charged_icon": "\ue22f ",
+            "charging_icon": "\ue234 ",
+            "discharging_icon": "\ue231 "
+          }
+        },
+        {
+          "type": "command",
+          "style": "plain",
+          "foreground": "p:terminal-white",
+          "properties": {
+            "command": "git log --pretty=format:%cr -1 || date +%H:%M:%S",
+            "shell": "bash"
+          }
+        }
+      ],
+      "overflow": "hide"
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:terminal-yellow",
+          "template": " {{ .Var.folder_icon }} {{ .Path }} ",
+          "properties": {
+            "style": "mixed"
+          }
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:go-blue",
+          "template": "{{ .Var.thunder_icon }}",
+          "properties": {
+            "style": "folder"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:terminal-gray",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-orange{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:terminal-red{{ end }}",
+            "{{ if gt .Ahead 0 }}p:terminal-blue{{ end }}",
+            "{{ if gt .Behind 0 }}p:git-orange{{ end }}"
+          ],
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Staging.Changed }} {{ .Var.git_staging }} {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} {{ .Var.git_working }} {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} {{ .Var.git_stash }} {{ .StashCount }}{{ end }} ",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:terminal-green",
+          "template": "{{ .Var.triangle_icon }}"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "palette": {
+    "git-orange": "#e24329",
+    "go-blue": "#1cc7d0",
+    "node-green": "#44883e",
+    "npm-red": "#cb3837",
+    "php-purple": "#4f5b93",
+    "python-yellow": "#ffde57",
+    "terminal-black": "#495057",
+    "terminal-blue": "#00B4D8",
+    "terminal-blue-black": "#1D3557",
+    "terminal-gray": "#ADB5BD",
+    "terminal-green": "#32FF6A",
+    "terminal-red": "#e63946",
+    "terminal-white": "#F8F9FA",
+    "terminal-yellow": "#FEDB39"
+  },
+  "var": {
+    "_icons": "set unicodes",
+    "branch_icon": "\ue725",
+    "charg_icon": "\ue234",
+    "disconn_icon": "\ue231",
+    "folder_icon": "\ue5ff",
+    "full_icon": "\ue22f",
+    "git_staging": "\uf046",
+    "git_stash": "\ueb4b",
+    "git_working": "\uf044",
+    "host_icon": "\uf108",
+    "node_icon": "\ue718",
+    "percent_icon": "\uf295",
+    "php_icon": "\ue73d",
+    "pipeline": "|",
+    "python_icon": "\ue235",
+    "separator": "❯",
+    "shell_icon": "\uf489",
+    "test": "\ueb4b",
+    "thunder_icon": "⚡",
+    "triangle_icon": "\u25b6",
+    "user_icon": "\ueb99"
+  }
+}

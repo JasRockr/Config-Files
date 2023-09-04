@@ -1,0 +1,66 @@
+{
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font, Hack Nerd Font",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "glassit.alpha": 235,
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "workbench.sideBar.location": "left",
+  "workbench.editor.showTabs": false,
+  "workbench.colorTheme": "Tokyo Night Dark",
+  "workbench.iconTheme": "sweet-vscode-icons",
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.visible": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.cursorBlinking": "expand",
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "FiraCode Nerd Font, Hack Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.formatOnSave": true,
+  "editor.guides.indentation": false,
+  "editor.glyphMargin": false,
+  "editor.matchBrackets": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.wordWrap": "on",
+  "editor.linkedEditing": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "breadcrumbs.enabled": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "indenticator.width": 0.1,
+  "indenticator.color.dark": "rgba(255,255,255,0.05)",
+  "indentRainbow.colors": [
+    "rgba(16,16,16,0.1)",
+    "rgba(16,16,16,0.2)",
+    "rgba(16,16,16,0.3)",
+    "rgba(16,16,16,0.4)",
+    "rgba(16,16,16,0.5)",
+    "rgba(16,16,16,0.6)",
+    "rgba(16,16,16,0.7)",
+    "rgba(16,16,16,0.8)",
+    "rgba(16,16,16,0.9)",
+    "rgba(16,16,16,1.0)"
+  ],
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.arrowParens": "avoid",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.tabWidth": 2,
+  "tabnine.experimentalAutoImports": true,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[blade]": {
+    "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "ms-mssql.mssql"
+  },
+  "redhat.telemetry.enabled": false
+}
