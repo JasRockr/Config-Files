@@ -1,21 +1,28 @@
 {
+  "glassit.alpha": 235,
+  "workbench.colorTheme": "Tokyo Night Dark",
+  "workbench.iconTheme": "sweet-vscode-icons",
+  "workbench.sideBar.location": "left",
+  "workbench.editor.showTabs": false,
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.visible": true,
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#fa5555",
+    "terminalCursor.foreground": "#7aff75"
+  },
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font, Hack Nerd Font",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "glassit.alpha": 235,
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.cursorBlinking": true,
   "editor.tabSize": 2,
-  "editor.indentSize": "tabSize",
-  "workbench.sideBar.location": "left",
-  "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Tokyo Night Dark",
-  "workbench.iconTheme": "sweet-vscode-icons",
-  "workbench.statusBar.visible": false,
-  "workbench.activityBar.visible": false,
-  "editor.stickyScroll.enabled": true,
-  "editor.cursorBlinking": "expand",
-  "editor.minimap.enabled": false,
   "editor.fontFamily": "FiraCode Nerd Font, Hack Nerd Font",
   "editor.fontLigatures": true,
+  "editor.indentSize": "tabSize",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line",
+  "editor.stickyScroll.enabled": true,
+  "editor.minimap.enabled": false,
   "editor.scrollbar.vertical": "hidden",
   "editor.overviewRulerBorder": false,
   "editor.hideCursorInOverviewRuler": true,
@@ -46,8 +53,10 @@
     "rgba(16,16,16,1.0)"
   ],
   "liveServer.settings.donotShowInfoMsg": true,
-
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "prettier.arrowParens": "avoid",
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
@@ -62,5 +71,6 @@
   "[sql]": {
     "editor.defaultFormatter": "ms-mssql.mssql"
   },
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "rapidapi.terminalLink.enabled": false
 }
